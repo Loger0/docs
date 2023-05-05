@@ -1,4 +1,5 @@
 module.exports = {
+  base: "./",
   title: "Roger",
   themeConfig: {
     base: "/docs/",
