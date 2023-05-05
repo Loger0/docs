@@ -20,7 +20,7 @@ jobs:
       - name: Deploy # 将打包内容发布到 github page
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with: # 自定义环境变量
-          BRANCH: docs
+          BRANCH: gh-pages
           FOLDER: dist
           REPOSITORY_NAME: Loger0/docs # 这是我的 github page 仓库
           TARGET_FOLDER: / # 打包的文件将放到静态服务器 / 目录下
