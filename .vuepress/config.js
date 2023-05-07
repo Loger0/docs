@@ -1,23 +1,13 @@
 module.exports = {
-  base: "./",
+  base: "/docs/",
   title: "Roger",
   themeConfig: {
     base: "/docs/",
     lastUpdated: "更新时间",
-    nav: [
-      { text: "Home", link: "/" },
-      { text: "Guide", link: "/about/" },
-      { text: "External", link: "https://google.com" },
-      {
-        text: "技术分类",
-        items: [
-          { text: "CSS", link: "/language/chinese" },
-          { text: "JS", link: "/language/japanese" },
-          { text: "Node", link: "/language/japanese" },
-          { text: "Vue", link: "/Vue/Render/" },
-        ],
-      },
-    ],
+    collapsable: true,
+    sidebarDepth: 2,
+    nav: require("./public/nav"),
+    sidebar: require("./public/sidebar"),
   },
   plugins: [
     [
@@ -36,6 +26,22 @@ module.exports = {
           const moment = require("moment");
           moment.locale(lang);
           return moment(timestamp).format("LLLL");
+        },
+      },
+    ],
+    [
+      "@vuepress/pwa",
+      {
+        serviceWorker: true,
+        updatePopup: {
+          "/": {
+            message: "New content is available.",
+            buttonText: "Refresh",
+          },
+          "/zh/": {
+            message: "发现新内容可用",
+            buttonText: "刷新",
+          },
         },
       },
     ],

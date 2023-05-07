@@ -1,6 +1,5 @@
 ---
 highlight: a11y-dark
-sidebar: auto
 ---
 
 ### VUE渲染流程
