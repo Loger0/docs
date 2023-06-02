@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浏览器是什么时候开始渲染的？ | Roger</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/docs/assets/img/bitbug_favicon.ico">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.16d44142.css" as="style"><link rel="preload" href="/docs/assets/js/app.055589eb.js" as="script"><link rel="preload" href="/docs/assets/js/2.a4ce278c.js" as="script"><link rel="preload" href="/docs/assets/js/9.e51a277c.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.cbcd239a.js"><link rel="prefetch" href="/docs/assets/js/11.9a4deab0.js"><link rel="prefetch" href="/docs/assets/js/12.261b571c.js"><link rel="prefetch" href="/docs/assets/js/13.c2afaf3a.js"><link rel="prefetch" href="/docs/assets/js/14.8cf83f01.js"><link rel="prefetch" href="/docs/assets/js/15.e79263b3.js"><link rel="prefetch" href="/docs/assets/js/16.b653720c.js"><link rel="prefetch" href="/docs/assets/js/17.ce002f15.js"><link rel="prefetch" href="/docs/assets/js/18.3a891816.js"><link rel="prefetch" href="/docs/assets/js/19.a1608cdb.js"><link rel="prefetch" href="/docs/assets/js/20.f6f64be1.js"><link rel="prefetch" href="/docs/assets/js/21.b1da476d.js"><link rel="prefetch" href="/docs/assets/js/22.3a6b08d9.js"><link rel="prefetch" href="/docs/assets/js/23.79dbccdc.js"><link rel="prefetch" href="/docs/assets/js/24.af45a295.js"><link rel="prefetch" href="/docs/assets/js/25.a6b4d454.js"><link rel="prefetch" href="/docs/assets/js/3.da040ca8.js"><link rel="prefetch" href="/docs/assets/js/4.c639701e.js"><link rel="prefetch" href="/docs/assets/js/5.5b10c8b6.js"><link rel="prefetch" href="/docs/assets/js/6.eb4985eb.js"><link rel="prefetch" href="/docs/assets/js/7.962eaaf6.js"><link rel="prefetch" href="/docs/assets/js/8.a2430b0b.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.16d44142.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Roger</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link">
+    首页
+  </a></div><div class="nav-item"><a href="https://juejin.cn/user/1913628905977070" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    掘金
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/docs/Native/Promise/" class="nav-link">
+    前端杂谈
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分类" class="dropdown-title"><span class="title">技术分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术分类" class="mobile-dropdown-title"><span class="title">技术分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/interview/html/" class="nav-link">
+    html
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/css/" class="nav-link">
+    css
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/js/" class="nav-link">
+    JS
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/node/" class="nav-link">
+    Node
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Vue/" class="nav-link">
+    Vue
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Chrome/" class="nav-link router-link-active">
+    浏览器
+  </a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link">
+    首页
+  </a></div><div class="nav-item"><a href="https://juejin.cn/user/1913628905977070" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    掘金
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/docs/Native/Promise/" class="nav-link">
+    前端杂谈
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分类" class="dropdown-title"><span class="title">技术分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术分类" class="mobile-dropdown-title"><span class="title">技术分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/interview/html/" class="nav-link">
+    html
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/css/" class="nav-link">
+    css
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/js/" class="nav-link">
+    JS
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/node/" class="nav-link">
+    Node
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Vue/" class="nav-link">
+    Vue
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Chrome/" class="nav-link router-link-active">
+    浏览器
+  </a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Chrome浏览器原理</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/Chrome/EventLoop/" class="sidebar-link">浏览器的事件循环</a></li><li><a href="/docs/Chrome/Render/" aria-current="page" class="active sidebar-link">Chrome浏览器渲染流程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/Chrome/Render/#第一步-解析html" class="sidebar-link">第一步 解析HTML</a></li><li class="sidebar-sub-header"><a href="/docs/Chrome/Render/#第二步-样式计算" class="sidebar-link">第二步 样式计算</a></li><li class="sidebar-sub-header"><a href="/docs/Chrome/Render/#第三步-布局" class="sidebar-link">第三步 布局</a></li><li class="sidebar-sub-header"><a href="/docs/Chrome/Render/#第四步-分层" class="sidebar-link">第四步 分层</a></li><li class="sidebar-sub-header"><a href="/docs/Chrome/Render/#第五步-生成绘制指令" class="sidebar-link">第五步 生成绘制指令</a></li><li class="sidebar-sub-header"><a href="/docs/Chrome/Render/#第六步-分块" class="sidebar-link">第六步 分块</a></li><li class="sidebar-sub-header"><a href="/docs/Chrome/Render/#第七步-光栅化" class="sidebar-link">第七步 光栅化</a></li><li class="sidebar-sub-header"><a href="/docs/Chrome/Render/#第八步-画" class="sidebar-link">第八步 画</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="浏览器是什么时候开始渲染的"><a href="#浏览器是什么时候开始渲染的" class="header-anchor">#</a> 浏览器是什么时候开始渲染的？</h1> <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a532b71fda054fa7a603c8c3d9fab4dd~tplv-k3u1fbpfcp-watermark.image?" alt="渲染时间点.png"></p> <ol><li>浏览器通过网络请求得到html文件</li> <li>生成一个渲染任务，传递到消息队列中</li> <li>渲染主线程通过事件循环拿到渲染任务开始渲染</li></ol> <h1 id="渲染流程"><a href="#渲染流程" class="header-anchor">#</a> 渲染流程</h1> <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/35b78b0fc98b4389bb8525d7109593b3~tplv-k3u1fbpfcp-watermark.image?" alt="渲染流程图.png"></p> <ul><li>HTML 解析</li> <li>样式计算</li> <li>布局</li> <li>分层</li> <li>绘制</li> <li>分块</li> <li>光栅化</li> <li>画</li></ul> <p><strong>每一个流程都有输入和输出，上一个流程的输出就是下一个流程的输入</strong></p> <h2 id="第一步-解析html"><a href="#第一步-解析html" class="header-anchor">#</a> 第一步 解析HTML</h2> <ol><li>解析HTML遇到css解析css，遇到js解析js，但是浏览器会开一个预解析线程负责下载和解析css，js，率先下载外部的css和js</li> <li>如果主线程遇到link标签会继续解析html，当css下载解释完成再交给主线程，是不会暂停等待的，所以css是不会阻塞html解析</li> <li>如果主线程遇到script标签，会暂停等待html下载和执行同步代码完成才会继续解析html，因为js中可能会修改了dom元素，必须等待js执行完成，这就是为什么js会阻塞html解析的原因</li> <li>解析html首先会创建一个document对象，我们所有的DOM对象都是添加到document对象中</li> <li>把我们在html写的标签变成对象格式，因为对象可以方便我们在js中操作DOM</li> <li>解析css也会创建一个StyleSheetList对象, 对象中有选择器名称和我们添加的css属性</li> <li>最终把 html 和 css 解析成两个对象</li></ol> <p><strong>当这一步完成就可以得到DOM树和CSSOM树</strong></p> <h2 id="第二步-样式计算"><a href="#第二步-样式计算" class="header-anchor">#</a> 第二步 样式计算</h2> <p>我们经常会使用一些不确定的单位，这一步就是把这些预设值变成绝对值, 比如</p> <ul><li>em (相对父元素）</li> <li>rem （相对根元素）</li> <li>百分比</li> <li>. . . . . .</li></ul> <ol><li>主线程遍历得到DOM树， 依次为每个节点计算出样式信息， 这一步叫做 <strong>Computer Style</strong></li> <li>把我们的预设值变成绝对值， 比如 background-color: white, 变成 background-color: rgb(255,255,255), 相对单位变成绝对单位， em 变成 px</li></ol> <p><strong>这一步我们可以得到带有样式的DOM树</strong></p> <h2 id="第三步-布局"><a href="#第三步-布局" class="header-anchor">#</a> 第三步 布局</h2> <ol><li>依次遍历，通过每个dom的节点的几何信息，比如宽高，相对包含块位置，计算出元素所在的位置</li> <li>但是往往DOM树和布局树并不是一一对应的</li></ol> <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/aafdbbc8275a4ffa9e07b2ab92cfd6ac~tplv-k3u1fbpfcp-watermark.image?" alt="布局树.png"></p> <ul><li>当元素使用了 display: none 属性时， 在dom树中是有节点的，但是他并没有几何信息，所以没有必要添加到布局树当中</li> <li>当使用了伪元素时，在dom树中是没有伪元素的节点信息的，但是有几何信息，是需要渲染到页面上的，所以要添加到布局树当中</li></ul> <p><strong>完成这一步可以得到布局树</strong></p> <h2 id="第四步-分层"><a href="#第四步-分层" class="header-anchor">#</a> 第四步 分层</h2> <p>浏览器会有一套复杂的策略对页面进行分层，分层可以提高浏览器的渲染效率，不会因为一个地方的变动而刷新整个页面，只是重新渲染一部分</p> <ul><li>我们在写css属性的时候有可能会影响到浏览器的分层结果，比如 z-index、滚动条、transform、opacity,也可以使用will-change更大程度影响分层结果</li></ul> <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4485265dd50e43af9b99edcfb3bef7df~tplv-k3u1fbpfcp-watermark.image?" alt="分层.png"></p> <ul><li>可以通过f12控制台中的Layers面板查看你的网页分层</li></ul> <h2 id="第五步-生成绘制指令"><a href="#第五步-生成绘制指令" class="header-anchor">#</a> 第五步 生成绘制指令</h2> <ol><li>这里会为每一个图层生成出如何绘制的指令</li></ol> <p><strong>到这一步渲染主线程的工作就完成了，剩下交给合成线程完成</strong></p> <h2 id="第六步-分块"><a href="#第六步-分块" class="header-anchor">#</a> 第六步 分块</h2> <ol><li>分块会将每一个图层切分成更小的区域，分块的工作是交给多线程完成的，他会通过线程池调取线程完成分块</li></ol> <h2 id="第七步-光栅化"><a href="#第七步-光栅化" class="header-anchor">#</a> 第七步 光栅化</h2> <ol><li>光栅化就是把每一小块区域变成位图，位图就是由多个像素点组成，这里已经生成了颜色信息了</li> <li>并且光栅化会优先处理靠近用户窗口的区域</li></ol> <h2 id="第八步-画"><a href="#第八步-画" class="header-anchor">#</a> 第八步 画</h2> <ol><li>合成线程拿到每一个图层，和位图之后，生成quad信息</li> <li>quad信息会指示出内容应该在什么位置，还有考虑是否有缩放，变形</li> <li>transform就是在合成线程中完成的，与主线程无关，这就是transform效率高的原因</li> <li>最后把quad信息交给GPU就可以把页面绘制出来了</li></ol> <h1 id="什么是-reflow-重排"><a href="#什么是-reflow-重排" class="header-anchor">#</a> 什么是 reflow （重排）</h1> <ul><li>reflow的本质就是布局被修改了，需要重新计算布局树</li> <li>浏览器为了提升效率，把多次修改导致布局树重复计算的操作，合并成一次操作</li> <li>这也导致了我们有时候获取dom可能得到的不是想要的数据</li> <li>浏览器也是有解决办法的，当 JS 获取布局属性时立即触发reflow那么就可以的到我们想要的数据了</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 举一个我遇到过的例子 在我做轮播图的时候，显示到最后一张图片时下一张应该立即跳到第一张</span>
+<span class="token comment">// 这个时候就要把轮播图滚动的过渡取消掉，但是后续还是需要这个过渡的</span>
+<span class="token comment">// 先把过渡取消</span>
+大盒子<span class="token punctuation">.</span>style<span class="token punctuation">.</span>transition <span class="token operator">=</span> <span class="token string">'none'</span>
+
+<span class="token comment">// 这里我们改变轮播图的位置</span>
+图片<span class="token punctuation">.</span>style<span class="token punctuation">.</span>translate <span class="token operator">=</span> <span class="token string">'0px'</span>
+<span class="token comment">// 读取布局属性导致 reflow</span>
+图片<span class="token punctuation">.</span>clientWidth
+
+<span class="token comment">// 再添加过渡</span>
+大盒子<span class="token punctuation">.</span>style<span class="token punctuation">.</span>transition <span class="token operator">=</span> <span class="token string">'all .5s'</span>
+</code></pre></div><p><strong>这个例子的意思就是你每一次执行的js代码对布局树的多次更改只会执行最终更改的结果，这个案例取消transition后面又添加了transition属性,这两部被合并了所以最终取消过渡失败，如果需要把两步分开在中间加一个读取布局属性就可以了</strong></p> <h1 id="什么是-repaint-重绘"><a href="#什么是-repaint-重绘" class="header-anchor">#</a> 什么是 repaint （重绘）</h1> <ul><li>repaint的本质就是根据分层信息重新生成绘制指令</li> <li>当我们修改了可见样式，比如 background color属性都会引起 repaint</li> <li>由于元素的布局信息也属于可见样式，所以 reflow 一定会引起 repaint。</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs/Chrome/EventLoop/" class="prev">
+          浏览器的事件循环
+        </a></span> <!----></p></div> </main></div><div class="global-ui"><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/docs/assets/js/app.055589eb.js" defer></script><script src="/docs/assets/js/2.a4ce278c.js" defer></script><script src="/docs/assets/js/9.e51a277c.js" defer></script>
+  </body>
+</html>

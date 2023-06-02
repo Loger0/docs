@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VUE渲染流程 | Roger</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/docs/assets/img/bitbug_favicon.ico">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.16d44142.css" as="style"><link rel="preload" href="/docs/assets/js/app.055589eb.js" as="script"><link rel="preload" href="/docs/assets/js/2.a4ce278c.js" as="script"><link rel="preload" href="/docs/assets/js/21.b1da476d.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.cbcd239a.js"><link rel="prefetch" href="/docs/assets/js/11.9a4deab0.js"><link rel="prefetch" href="/docs/assets/js/12.261b571c.js"><link rel="prefetch" href="/docs/assets/js/13.c2afaf3a.js"><link rel="prefetch" href="/docs/assets/js/14.8cf83f01.js"><link rel="prefetch" href="/docs/assets/js/15.e79263b3.js"><link rel="prefetch" href="/docs/assets/js/16.b653720c.js"><link rel="prefetch" href="/docs/assets/js/17.ce002f15.js"><link rel="prefetch" href="/docs/assets/js/18.3a891816.js"><link rel="prefetch" href="/docs/assets/js/19.a1608cdb.js"><link rel="prefetch" href="/docs/assets/js/20.f6f64be1.js"><link rel="prefetch" href="/docs/assets/js/22.3a6b08d9.js"><link rel="prefetch" href="/docs/assets/js/23.79dbccdc.js"><link rel="prefetch" href="/docs/assets/js/24.af45a295.js"><link rel="prefetch" href="/docs/assets/js/25.a6b4d454.js"><link rel="prefetch" href="/docs/assets/js/3.da040ca8.js"><link rel="prefetch" href="/docs/assets/js/4.c639701e.js"><link rel="prefetch" href="/docs/assets/js/5.5b10c8b6.js"><link rel="prefetch" href="/docs/assets/js/6.eb4985eb.js"><link rel="prefetch" href="/docs/assets/js/7.962eaaf6.js"><link rel="prefetch" href="/docs/assets/js/8.a2430b0b.js"><link rel="prefetch" href="/docs/assets/js/9.e51a277c.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.16d44142.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Roger</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link">
+    首页
+  </a></div><div class="nav-item"><a href="https://juejin.cn/user/1913628905977070" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    掘金
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/docs/Native/Promise/" class="nav-link">
+    前端杂谈
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分类" class="dropdown-title"><span class="title">技术分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术分类" class="mobile-dropdown-title"><span class="title">技术分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/interview/html/" class="nav-link">
+    html
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/css/" class="nav-link">
+    css
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/js/" class="nav-link">
+    JS
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/node/" class="nav-link">
+    Node
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Vue/" class="nav-link router-link-active">
+    Vue
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Chrome/" class="nav-link">
+    浏览器
+  </a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link">
+    首页
+  </a></div><div class="nav-item"><a href="https://juejin.cn/user/1913628905977070" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    掘金
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/docs/Native/Promise/" class="nav-link">
+    前端杂谈
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分类" class="dropdown-title"><span class="title">技术分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术分类" class="mobile-dropdown-title"><span class="title">技术分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/interview/html/" class="nav-link">
+    html
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/css/" class="nav-link">
+    css
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/js/" class="nav-link">
+    JS
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/node/" class="nav-link">
+    Node
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Vue/" class="nav-link router-link-active">
+    Vue
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Chrome/" class="nav-link">
+    浏览器
+  </a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue面试题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue原理解析</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/Vue/Render/" aria-current="page" class="active sidebar-link">Vue渲染原理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/Vue/Render/#初始化数据" class="sidebar-link">初始化数据</a></li><li class="sidebar-sub-header"><a href="/docs/Vue/Render/#编译渲染模板" class="sidebar-link">编译渲染模板</a></li></ul></li><li><a href="/docs/Vue/InitData/" class="sidebar-link">Vue初始化data</a></li><li><a href="/docs/Vue/LifeCircle/" class="sidebar-link">Vue生命周期原理</a></li><li><a href="/docs/Vue/NextTick/" class="sidebar-link">Vue的nextTick原理</a></li><li><a href="/docs/Vue/Watch/" class="sidebar-link">Vue的watch原理解析</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="vue渲染流程"><a href="#vue渲染流程" class="header-anchor">#</a> VUE渲染流程</h3> <h2 id="初始化数据"><a href="#初始化数据" class="header-anchor">#</a> 初始化数据</h2> <ul><li>对data中的数据进行数据劫持</li> <li>Vue2使用了Object.defineProperty()给每个属性添加get,set方法进行数据监听</li> <li>但是有两种情况 （1）对象 （2）数组</li> <li>对象使用的是Object.defineProperty()</li> <li>数组使用的是对Array方法进行重写，在调用push,pop...方法时，会进入我们重写数组方法中</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 添加数据劫持</span>
+<span class="token keyword">function</span> <span class="token function">defineReactive</span><span class="token punctuation">(</span><span class="token parameter">data<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">observe</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token comment">// 递归</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> value
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 添加值也需要劫持</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">===</span> newValue<span class="token punctuation">)</span> <span class="token keyword">return</span>
+      <span class="token function">observe</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>
+      value <span class="token operator">=</span> newValue
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 1. 获取原来的数组方法</span>
+<span class="token keyword">let</span> oldArrayProtoMethods <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype
+
+<span class="token comment">// 2. 继承</span>
+<span class="token keyword">export</span> <span class="token keyword">let</span> ArrayMethods <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>oldArrayProtoMethods<span class="token punctuation">)</span>
+
+<span class="token comment">// 3. 劫持数组里面的所有方法</span>
+<span class="token keyword">let</span> methods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'push'</span><span class="token punctuation">,</span> <span class="token string">'pop'</span><span class="token punctuation">,</span> <span class="token string">'shift'</span><span class="token punctuation">,</span> <span class="token string">'unshift'</span><span class="token punctuation">,</span> <span class="token string">'splice'</span><span class="token punctuation">]</span> <span class="token comment">// 常用改变数组的方法</span>
+
+methods<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  ArrayMethods<span class="token punctuation">[</span>item<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 调用原来的方法</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> oldArrayProtoMethods<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+    <span class="token comment">// 数组追加对象的情况</span>
+    <span class="token keyword">let</span> inserted
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">'push'</span><span class="token operator">:</span>
+      <span class="token keyword">case</span> <span class="token string">'unshift'</span><span class="token operator">:</span>
+        inserted <span class="token operator">=</span> args
+        <span class="token keyword">break</span>
+      <span class="token keyword">case</span> <span class="token string">'splice'</span><span class="token operator">:</span>
+        inserted <span class="token operator">=</span> args<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">let</span> ob <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>__ob__
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>inserted<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ob<span class="token punctuation">.</span><span class="token function">observeArray</span><span class="token punctuation">(</span>inserted<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><blockquote><p>完成数据初始化我们修改data中的数据则可以被监听到，这一步是在beforeCreate中完成，这也是created函数中为什么获取不到data中数据的原因</p></blockquote> <h2 id="编译渲染模板"><a href="#编译渲染模板" class="header-anchor">#</a> 编译渲染模板</h2> <ul><li>通过el属性或者$mount的参数获得对应的标签</li> <li>查看我们的属性中有没有render函数,template模板，el属性/$mount方法</li> <li>这三个属性是有优先级的 el属性是必须要有的,如果有el属性，会查看有没有template属性，有template会查看有没有render函数， 顺序由高到低 render -&gt; template -&gt; el</li> <li>拿到模板之后开始编译，分一下步骤，</li></ul> <ol><li>将html变成ast语法树</li> <li>将ast语法树转换为render函数</li> <li>render函数转换成虚拟DOM</li> <li>虚拟DOM生成真实DOM</li> <li>挂载到页面上</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token literal-property property">ast语法树格式</span><span class="token operator">:</span>
+
+ <span class="token punctuation">{</span>
+   <span class="token literal-property property">tag</span><span class="token operator">:</span> <span class="token string">'div'</span><span class="token punctuation">,</span>  <span class="token comment">// 标签</span>
+   <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span><span class="token string">'app'</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// 属性</span>
+   <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span>  <span class="token comment">// 子节点</span>
+     <span class="token punctuation">{</span>
+       <span class="token literal-property property">tag</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+       <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'hello'</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     <span class="token punctuation">{</span>
+       <span class="token literal-property property">tag</span><span class="token operator">:</span> <span class="token string">'div'</span>
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">]</span>
+ <span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>render函数格式：
+
+<span class="token comment">// &lt;div id=&quot;app&quot;&gt;hello{{name}}&lt;h1&gt;&lt;/h1&gt;&lt;/div&gt;</span>
+<span class="token comment">// _c 解析标签</span>
+<span class="token comment">// _v 解析文本</span>
+<span class="token comment">// _s 解析模板字符串</span>
+<span class="token function">_c</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span>app<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">_v</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token operator">+</span><span class="token function">_s</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">_c</span><span class="token punctuation">(</span><span class="token string">'h1'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 有子节点继续在后面追加</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>虚拟<span class="token constant">DOM</span>的格式：
+
+<span class="token punctuation">{</span>
+  <span class="token literal-property property">children</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 子级 格式也是一样的</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'app'</span><span class="token punctuation">,</span> style<span class="token operator">:</span> <span class="token punctuation">{</span>…<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token comment">// 标签中的属性</span>
+  <span class="token literal-property property">el</span><span class="token operator">:</span> div <span class="token comment">// DOM元素</span>
+  <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">&quot;id&quot;</span> <span class="token comment">// 属性的键</span>
+  <span class="token literal-property property">tag</span><span class="token operator">:</span> <span class="token string">&quot;div&quot;</span> <span class="token comment">// 元素标签名</span>
+  <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">&quot;hello&quot;</span> <span class="token comment">// 文本</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>Vue中渲染模板还使用到了diff算法进行比对，提高性能</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs/Vue/InterView/" class="prev">
+          Vue面试题
+        </a></span> <span class="next"><a href="/docs/Vue/InitData/">
+          Vue初始化data
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/docs/assets/js/app.055589eb.js" defer></script><script src="/docs/assets/js/2.a4ce278c.js" defer></script><script src="/docs/assets/js/21.b1da476d.js" defer></script>
+  </body>
+</html>

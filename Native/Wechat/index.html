@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>微信登录流程 | Roger</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/docs/assets/img/bitbug_favicon.ico">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.16d44142.css" as="style"><link rel="preload" href="/docs/assets/js/app.055589eb.js" as="script"><link rel="preload" href="/docs/assets/js/2.a4ce278c.js" as="script"><link rel="preload" href="/docs/assets/js/14.8cf83f01.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.cbcd239a.js"><link rel="prefetch" href="/docs/assets/js/11.9a4deab0.js"><link rel="prefetch" href="/docs/assets/js/12.261b571c.js"><link rel="prefetch" href="/docs/assets/js/13.c2afaf3a.js"><link rel="prefetch" href="/docs/assets/js/15.e79263b3.js"><link rel="prefetch" href="/docs/assets/js/16.b653720c.js"><link rel="prefetch" href="/docs/assets/js/17.ce002f15.js"><link rel="prefetch" href="/docs/assets/js/18.3a891816.js"><link rel="prefetch" href="/docs/assets/js/19.a1608cdb.js"><link rel="prefetch" href="/docs/assets/js/20.f6f64be1.js"><link rel="prefetch" href="/docs/assets/js/21.b1da476d.js"><link rel="prefetch" href="/docs/assets/js/22.3a6b08d9.js"><link rel="prefetch" href="/docs/assets/js/23.79dbccdc.js"><link rel="prefetch" href="/docs/assets/js/24.af45a295.js"><link rel="prefetch" href="/docs/assets/js/25.a6b4d454.js"><link rel="prefetch" href="/docs/assets/js/3.da040ca8.js"><link rel="prefetch" href="/docs/assets/js/4.c639701e.js"><link rel="prefetch" href="/docs/assets/js/5.5b10c8b6.js"><link rel="prefetch" href="/docs/assets/js/6.eb4985eb.js"><link rel="prefetch" href="/docs/assets/js/7.962eaaf6.js"><link rel="prefetch" href="/docs/assets/js/8.a2430b0b.js"><link rel="prefetch" href="/docs/assets/js/9.e51a277c.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.16d44142.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Roger</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link">
+    首页
+  </a></div><div class="nav-item"><a href="https://juejin.cn/user/1913628905977070" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    掘金
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/docs/Native/Promise/" class="nav-link">
+    前端杂谈
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分类" class="dropdown-title"><span class="title">技术分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术分类" class="mobile-dropdown-title"><span class="title">技术分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/interview/html/" class="nav-link">
+    html
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/css/" class="nav-link">
+    css
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/js/" class="nav-link">
+    JS
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/node/" class="nav-link">
+    Node
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Vue/" class="nav-link">
+    Vue
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Chrome/" class="nav-link">
+    浏览器
+  </a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link">
+    首页
+  </a></div><div class="nav-item"><a href="https://juejin.cn/user/1913628905977070" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    掘金
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/docs/Native/Promise/" class="nav-link">
+    前端杂谈
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分类" class="dropdown-title"><span class="title">技术分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术分类" class="mobile-dropdown-title"><span class="title">技术分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/interview/html/" class="nav-link">
+    html
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/css/" class="nav-link">
+    css
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/js/" class="nav-link">
+    JS
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/interview/node/" class="nav-link">
+    Node
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Vue/" class="nav-link">
+    Vue
+  </a></li><li class="dropdown-item"><!----> <a href="/docs/Chrome/" class="nav-link">
+    浏览器
+  </a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Promise</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/Native/Promise/" class="sidebar-link">手写原生Promise</a></li><li><a href="/docs/Native/PromiseInterView/" class="sidebar-link">手撕Promise面试题</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Axios</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="微信登录流程"><a href="#微信登录流程" class="header-anchor">#</a> 微信登录流程</h2> <p><em>微信官方的流程图</em></p> <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3c36e9a0ebea488f9f622201da0eadd2~tplv-k3u1fbpfcp-watermark.image?" alt="微信登录流程图.png"></p> <p>这边附上微信官方的文档：<a href="https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html" target="_blank" rel="noopener noreferrer">https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <ol><li>第三方 （第三方即我们开发的网页应用，称为第三方是站在微信官方的角度来说）发起微信授权登录请求 （即让用户扫码） ，微信用户允许授权第三方应用后 （用户扫码并点击手机微信的确认授权） ，微信会拉起应用或重定向到第三方网站，并且带上授权临时票据code参数 （我们开发的网页应用会重定向，并且路径会携带上code参数） ；</li> <li>通过code参数加上AppID和AppSecret等，通过API换取access_token（前端将code通过接口传给后端，后端将code、AppID和AppSecret通过接口传给微信服务器并换取access_token）；</li> <li>通过access_token进行接口调用，获取用户基本数据资源或帮助用户实现基本操作。</li></ol> <h3 id="跳转到微信二维码页面"><a href="#跳转到微信二维码页面" class="header-anchor">#</a> 跳转到微信二维码页面</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 替换当前</span>
+<span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token function">encodeURIComponent</span><span class="token punctuation">(</span>
+  <span class="token comment">// http://127.0.0.1:8080替换成你自己的本地开发地址</span>
+  <span class="token comment">// 加上this.$route.path的原因是，当前路径不一定是首页，也可能是其他页面，因此需要携带当前页面的路径供扫码后返回</span>
+  window<span class="token punctuation">.</span><span class="token function">btoa</span><span class="token punctuation">(</span><span class="token string">'http://127.0.0.1:8080'</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>
+  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://open.weixin.qq.com/connect/qrconnect?appid=wx67cfaf9e3ad31a0d
+  &amp;redirect_uri=http://sc.wolfcode.cn/wechatLogin
+  &amp;response_type=code&amp;scope=snsapi_login&amp;state=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>state<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">#wechat_redirect</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+  <span class="token string">'_self'</span>
+<span class="token punctuation">)</span>
+</code></pre></div><blockquote><ol><li><code>redirect_uri</code>是重定向地址，正常开发流程中，我们扫码后网页重定向地址是<code>redirect_uri</code>对应地址，此地址需要在微信公众平台进行配置，且和<code>appid</code>配对。如果<code>redirect_uri</code>与<code>appid</code>不匹配则会提示错误</li> <li>这边的<code>state</code>是我们自己项目的地址，拼接到是<code>state</code>属性中,再扫码完成会跳转到<code>state</code>属性的地址</li> <li><code>scope</code>属性值不为<code>snsapi_login</code>也会报错</li></ol></blockquote> <h3 id="用户确认登录后"><a href="#用户确认登录后" class="header-anchor">#</a> 用户确认登录后</h3> <ol><li>扫码成功后会根据我们传入的<code>redirect_uri</code>路径，重定向到我们传入的路径中</li> <li>重定向到我们的项目中，路径会携带了code值，我们需要拿到code值发送到后端</li> <li>在vue2中路由跳转是异步执行的，我们通过<code>this.$route.query</code>可能会获取不到查询字符串
+这个时候我们可以通过路由钩子完成 <code>this.$router.onReady(()=&gt;{})</code> 在回调函数中就可以获取到我们想要的值</li> <li>这个时候又会有2种情况，看具体需求，第一种情况：微信未与手机号绑定 第二种情况：后端返回token登录成功</li> <li>第一种情况：当微信与手机号未绑定时，后端会返回一个约定好的状态码，并且还有一个<code>uuid</code>表示在微信中的唯一标识，我们把<code>uuid</code>保存起来供后期使用，然后打开你们项目的登录框，拿到用户的手机号/账号，结合<code>uuid</code>发送给后端，后端返回token则绑定成功啦</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 路由切换异步执行 onReady 路由切换完成钩子</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">onReady</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 微信返回的code</span>
+  <span class="token keyword">const</span> queryCode <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>query<span class="token punctuation">.</span>code
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>queryCode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 把code传到后端获取token</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">wechatLogin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> queryCode
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// code为407表示未绑定微信</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">407</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// uuid表示微信中的唯一标识</span>
+      <span class="token keyword">const</span> uuid <span class="token operator">=</span> res<span class="token punctuation">.</span>uuid
+      <span class="token comment">// 把uuid保存到vuex</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateUserUuid</span><span class="token punctuation">(</span>uuid<span class="token punctuation">)</span>
+      <span class="token comment">// 打开登录框</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">changeLoginDialogVisible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+      <span class="token comment">// code为0表示微信已绑定直接登录就行</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">asyncShow</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'登录成功！'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'success'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">duration</span><span class="token operator">:</span> <span class="token number">5000</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">,</span> res<span class="token punctuation">[</span><span class="token string">'x-auth-token'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleLogin</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">changeLoginDialogVisible</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 路由跳转到当前页面 防止用户查看到路径中的数据code</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><blockquote><p>登录流程大概就是这样的啦，大家可以上手项目试一试</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/docs/assets/js/app.055589eb.js" defer></script><script src="/docs/assets/js/2.a4ce278c.js" defer></script><script src="/docs/assets/js/14.8cf83f01.js" defer></script>
+  </body>
+</html>
