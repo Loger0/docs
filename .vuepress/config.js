@@ -3,12 +3,12 @@ module.exports = {
   title: "Roger",
   themeConfig: {
     base: "/docs/",
-    lastUpdated: "更新时间",
     collapsable: true,
     sidebarDepth: 2,
     nav: require("./public/nav"),
     sidebar: require("./public/sidebar"),
   },
+  head: [["link", { rel: "icon", href: "/assets/img/bitbug_favicon.ico" }]],
   plugins: [
     [
       "cursor-effects",
@@ -26,22 +26,6 @@ module.exports = {
           const moment = require("moment");
           moment.locale(lang);
           return moment(timestamp).format("LLLL");
-        },
-      },
-    ],
-    [
-      "@vuepress/pwa",
-      {
-        serviceWorker: true,
-        updatePopup: {
-          "/": {
-            message: "New content is available.",
-            buttonText: "Refresh",
-          },
-          "/zh/": {
-            message: "发现新内容可用",
-            buttonText: "刷新",
-          },
         },
       },
     ],
